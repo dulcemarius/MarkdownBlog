@@ -1,4 +1,9 @@
+const Map = dynamic(() => import('./components/map'), {
+  ssr: false,
+});
 import { BlogPosts } from 'app/components/posts'
+import dynamic from 'next/dynamic';
+
 
 export default function Page() {
   return (
@@ -15,6 +20,7 @@ export default function Page() {
       <p className="mb-4">
         {`Have a great day!`}
       </p>
+      <Map />
     </section>
   )
 }
