@@ -1,5 +1,14 @@
 import { BlogPosts } from 'app/components/posts'
-
+import type { Viewport } from 'next'
+ 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  // Also supported by less commonly used
+  // interactiveWidget: 'resizes-visual',
+}
 export default function Page() {
   return (
     <section className='w-auto'>
