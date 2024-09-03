@@ -2,7 +2,7 @@ import { BlogPosts } from 'app/components/posts'
 
 export default function Page() {
   return (
-    <section className='w-10/12'>
+    <section className='w-auto'>
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
         Welcome
       </h1>

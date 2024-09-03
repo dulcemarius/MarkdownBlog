@@ -59,7 +59,7 @@ export default function Blog({ params }) {
   }
 
   return (
-    <section className='w-10/12'>
+    <section className='w-auto'>
       <script
         type="application/ld+json"
         suppressHydrationWarning
