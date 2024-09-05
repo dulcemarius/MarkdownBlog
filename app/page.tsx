@@ -10,16 +10,16 @@ export default function Page() {
   return (
     <section className='w-auto'>
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        Welcome
+        Benvenuto
       </h1>
       <p className="mb-4">
-        {`This is my blogging website. I'm a web developer and I love to write about my experiences and learnings,`} {`you can find all`} <a className="underline" href="/blog">{`my posts here.`}</a>
+        {`Questo è il mio sito blog`} {`puoi trovare tutti i`} <a className="underline" href="/blog">{`miei post qui.`}</a>
       </p>
       <p className="mb-4">
-        {`If you have any questions or suggestions,`}<br/>{` feel free to reach out to me via`} <a className="underline" href="mailto:dulcemariuspriv@gmail.com">{`e-mail`}</a>
-      </p>
-      <p className="mb-4">
-        {`Have a great day!`}
+        {`Se hai domande o suggerimenti,`}<br/>{`scrivimi su `} 
+        <a className="underline" href="https://matrix.to/#/@mariusdulce:beeper.com">{`matrix`}</a>
+        {` o `}
+        <a className="underline" href="mailto:dulcemariuspriv@gmail.com">{`e-mail`}</a>
       </p>
       {/* <Map /> */}
     </section>
