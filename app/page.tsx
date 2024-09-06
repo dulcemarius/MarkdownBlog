@@ -18,8 +18,10 @@ export default function Page() {
       <p className="mb-4">
         {`Se hai domande o suggerimenti,`}<br/>{`scrivimi su `} 
         <a className="underline" href="https://matrix.to/#/@mariusdulce:beeper.com">{`matrix`}</a>
-        {` o `}
-        <a className="underline" href="mailto:dulcemariuspriv@gmail.com">{`e-mail`}</a>
+        {` o una `}
+        <a className="transition-all underline hover:text-white
+        hover:bg-black
+        dark:hover:text-black dark:hover:bg-white" href="mailto:dulcemariuspriv@gmail.com">{`e-mail`}</a>
       </p>
       {/* <Map /> */}
     </section>
