@@ -24,7 +24,7 @@ export default function Page() {
         </a>{" "}
         o{" "}
         <a
-          className="transition-all underline hover:text-white hover:bg-black dark:hover:text-black dark:hover:bg-white"
+          className="underline"
           href="mailto:dulcemariuspriv@gmail.com"
         >
           e-mail

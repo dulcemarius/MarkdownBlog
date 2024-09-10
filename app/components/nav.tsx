@@ -13,18 +13,18 @@ const NavLink = ({ path, name, isActive }) => (
   <Link
     href={path}
     className={`
-      hover:text-neutral-800 dark:hover:text-neutral-200
+      hover:text-black dark:hover:text-white
       flex align-middle relative pb-2 mr-8
       transition-colors duration-200 ease-in-out
       ${isActive 
-        ? 'text-neutral-800 dark:text-neutral-200' 
+        ? 'text-black dark:text-white' 
         : 'text-neutral-600 dark:text-neutral-400'}
     `}
   >
     {name}
     {isActive && (
       <motion.span
-        className="absolute left-0 right-0 bottom-0 h-0.5 bg-neutral-800 dark:bg-neutral-200"
+        className="absolute left-0 right-0 bottom-0 h-0.5 bg-black dark:bg-white"
         layoutId="underline"
         transition={{ type: "tween", duration: 0.2 }}
       />
