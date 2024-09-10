@@ -1,51 +1,49 @@
 'use client'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
-const navItems = {
-  '/': {
-    name: 'home',
-  },
-  '/blog': {
-    name: 'blog',
-  },
-}
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+
+const navItems = [
+  { path: '/', name: 'home' },
+  { path: '/blog', name: 'blog' },
+]
+
+const NavLink = ({ path, name, isActive }) => (
+  <Link
+    href={path}
+    className={`
+      hover:text-neutral-800 dark:hover:text-neutral-200
+      flex align-middle relative pb-2 mr-8
+      transition-colors duration-200 ease-in-out
+      ${isActive 
+        ? 'text-neutral-800 dark:text-neutral-200' 
+        : 'text-neutral-600 dark:text-neutral-400'}
+    `}
+  >
+    {name}
+    {isActive && (
+      <motion.span
+        className="absolute left-0 right-0 bottom-0 h-0.5 bg-neutral-800 dark:bg-neutral-200"
+        layoutId="underline"
+        transition={{ type: "tween", duration: 0.2 }}
+      />
+    )}
+  </Link>
+)
 
 export function Navbar() {
   const pathname = usePathname()
 
   return (
     <aside className="mb-16 tracking-tight">
-      <div className="lg:sticky lg:top-20">
-        <nav
-          className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6"
-          id="nav"
-        >
-          <div className="flex flex-row space-x-0 pr-10">
-            {Object.entries(navItems).map(([path, { name }]) => {
-              const isActive = pathname === path
-              return (
-                <Link
-                  key={path}
-                  href={path}
-                  className={`
-                    hover:text-black dark:hover:text-white
-                    flex align-middle relative py-1 mr-6
-                    ${isActive 
-                      ? 'text-black dark:text-white' 
-                      : 'text-neutral-600 dark:text-neutral-400'}
-                  `}
-                >
-                  {name}
-                  {isActive && (
-                    <span className="absolute left-0 bottom-0 w-full h-[2px] bg-neutral-800 dark:bg-neutral-200" />
-                  )}
-                </Link>
-              )
-            })}
-          </div>
-        </nav>
-      </div>
+      <nav className="lg:sticky lg:top-20 flex flex-row items-start relative fade md:overflow-auto scroll-pr-6">
+        <div className="flex flex-row">
+          {navItems.map(({ path, name }) => (
+            <NavLink key={path} path={path} name={name} isActive={pathname === path} />
+          ))}
+        </div>
+      </nav>
     </aside>
   )
 }
